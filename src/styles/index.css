@@ -1,0 +1,182 @@
+* {
+    box-shadow: inset 0 0 1px 1px black;
+    box-sizing: border-box;
+    text-align: center;
+}
+body {
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper.app {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.wrapper.pane {
+    flex-direction: column;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.wrapper.quest {
+    display: flex;
+    flex-direction: row;
+}
+.wrapper.tile {
+    border-radius: .5em;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.quest-history {
+    height: 100%;
+    overflow-y: auto;
+}
+.quest__details {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: none;
+}
+.quest__key-info {
+    display: flex;
+    padding: .5em 1em;
+    justify-content: space-between;
+    width: 100%;
+}
+.quest__description {
+    padding: .5em 1em;
+    text-align: left;
+}
+.quest__tickbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+.container {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    height: 12vh;
+}
+.quest__container {
+    background-color: #eee;
+    border-radius: .5em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.quest__container:hover {
+    background-color: lightgreen;
+}
+.completed {
+    background-color: darkgreen;
+    pointer-events: none;
+}
+.completed:hover {
+    background-color: darkgreen;
+}
+
+.placard {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+}
+.paper-doll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    box-shadow: inset 0 0 2px 2px red;
+}
+.body.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45vw;
+    width: 75%;
+}
+#paper-doll-base {
+    width: 80%;
+    height: 100%;
+}
+
+/* div heights for paper doll based on human size dimensions*/
+.body.head {
+    height: 18%;
+    width: 100%;
+}
+.body.torso {
+    display: flex;
+    flex-direction: row;
+    height: 27%;
+    width: 100%;
+}
+.body.lower {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 39%;
+}
+.body.legs {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 54%;
+}
+.body.hands {
+    width: 23%;
+    height: 100%;
+}
+.body.feet {
+    width: 100%;
+    height: 16%;
+}
+/* styles for paper doll image placement */
+#pdHead, #pdTorso, #pdLegs, #pdFeet, #pdLHand, #pdRHand {
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+}
+#pdHead {
+    background-size: contain;
+}
+
+.tile:nth-child(n) {
+    flex-basis: 20%;
+    height: 20%;
+}
+
+.inventory {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 65%;
+}
+
+.skills-window {
+    height: 35%;
+}
+.skills-window__p {
+    width: 100%;
+    margin: 0;
+    padding: 1em;
+}
