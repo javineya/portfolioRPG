@@ -19,9 +19,8 @@ class QuestHistory extends React.Component {
         // declare variables for targeting & file location
         let newImage = props.newImage;
         let imageTarget = props.target;
-        // TODO: make image files more descriptive, drop questIndex from state
-        let tileImage = `${props.tileImage}${props.questIndex}.png`;
-        let tileTarget = `tile${props.questIndex}`;
+        let tileImages = props.tileImages;
+        let tileTargets = props.tileTargets;
         
         // copy this.state.quests into array for .map()
         var quests = [...this.state.quests];
@@ -30,13 +29,14 @@ class QuestHistory extends React.Component {
             if ( quest.name === props.name) {
 
                 // change paper doll image
-                const upgrade = document.getElementById(imageTarget);
-                const tileUpgrade = document.getElementById(tileTarget);
-                upgrade.style.backgroundImage=`url(${newImage})`;
-                // change tile image
-                tileUpgrade.classList.add('filled');
-                tileUpgrade.style.backgroundImage=`url(${tileImage})`;
-
+                const upgrade = document.getElementById(imageTarget);upgrade.style.backgroundImage=`url(${newImage})`;
+                if (tileTargets) {
+                    tileTargets.map((target, i) => {
+                        let tileUpgrade = document.getElementById(target);
+                        tileUpgrade.classList.add('filled');
+                        return tileUpgrade.style.backgroundImage=`url(${tileImages[i]}.png)`;
+                    })
+                }
             } 
 
             return quest;
@@ -52,7 +52,6 @@ class QuestHistory extends React.Component {
                 {this.state.quests.map((quest, i) => 
                     <Quest 
                         key={i}
-                        questIndex={i}
                         name={quest.name}
                         note={quest.note}
                         completedAt={quest.completedAt}
@@ -60,9 +59,11 @@ class QuestHistory extends React.Component {
                         newImage={quest.newImage}
                         defaultImage={quest.defaultImage}
                         target={quest.target}
-                        tileImage={quest.tileImage}
+                        tileImages={quest.tileImages}
+                        tileTargets={quest.tileTargets}
                         onClick={this.handleClick}
                     />)}
+                <h3>The Quest continues...</h3>
             </div>
         )
     }

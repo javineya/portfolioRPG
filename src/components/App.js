@@ -25,7 +25,7 @@ const PaperDoll = () => (
     </div>
 );
 
-const SkillsWindow = () => (
+const SkillsWindow = (props) => (
     <div className="wrapper skills-window">
         <div id='moreSkillInfo'>
             <p className='skills-window__p' id='moreSkillInfo'>Click an item above to see more information.</p>

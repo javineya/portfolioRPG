@@ -12,7 +12,7 @@ class Inventory extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
     }
-
+    // TODO:    Alter function to return array of information based on state object.
     handleClick = (event, props) => {
         /*
             TAKES:      event, props from Redux store
