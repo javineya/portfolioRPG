@@ -1,7 +1,8 @@
-import React from 'react';
+import React            from 'react';
 
-import QuestHistory from './QuestHistory';
-import Inventory from './Inventory';
+import QuestHistory     from './QuestHistory';
+import Inventory        from './Inventory';
+import SkillsWindow     from './SkillsWindow';
 
 const Placard = () => (
     <div className="wrapper placard">
@@ -21,14 +22,6 @@ const PaperDoll = () => (
                 <div className='body hands' id='pdLHand' style={{backgroundImage: "url(images/pdDefaultLHand.png)"}}></div>
             </div>
             <div className='body feet' id='pdFeet' style={{backgroundImage: "url(images/pdDefaultFeet.png)"}}></div>
-        </div>
-    </div>
-);
-
-const SkillsWindow = (props) => (
-    <div className="wrapper skills-window">
-        <div id='moreSkillInfo'>
-            <p className='skills-window__p' id='moreSkillInfo'>Click an item above to see more information.</p>
         </div>
     </div>
 );

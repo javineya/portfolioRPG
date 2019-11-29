@@ -1,7 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React                from 'react';
+import { connect }          from 'react-redux';
 
-import Tile from './Tile';
+import Tile                 from './Tile';
+import { tileData }         from '../common/app-data';
 
 class Inventory extends React.Component {    
     constructor (props) {
@@ -12,15 +13,8 @@ class Inventory extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
     }
-    // TODO:    Alter function to return array of information based on state object.
+    
     handleClick = (event, props) => {
-        /*
-            TAKES:      event, props from Redux store
-            RETURNS:    nothing
-            PURPOSE:    if tile has an icon...
-                        ...update skill window when tile clicked
-        */
-
         const target =  document.getElementById('moreSkillInfo');
 
         if ( event.target.classList.contains('filled') ) {
